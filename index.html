@@ -22,41 +22,54 @@
             background-repeat: no-repeat;
             background-position: right 10px top 200px;
         }
-
-            /* Quando a tela for menor que 1.000px, a imagem de fundo some */
-        @media (max-width: 1000px) {
-            body {
-                background-image: none; /* Remove a imagem de fundo */
-            }
-        }
-
-            /* Ou, para diminuir o tamanho da imagem em telas menores */
-        @media (max-width: 768px) {
-            body {
-                background-size: 250px 150px; /* Reduz o tamanho da imagem */
-            }
-        }
         @media (max-width: 600px) {
             body {
-                 background-size: 200px 150px; /* Ajuste adicional para dispositivos menores */
-                }
-            h2 {
-                font-size: 20px; /* Ajusta o tamanho da fonte para telas menores */
+                background-size: 200px 150px; /* Ajusta o tamanho da imagem para telas menores */
+                font-size: 14px; /* Ajusta o tamanho da fonte */
+                background-image: none; /* Remove a imagem de fundo em dispositivos pequenos */
+                background-color: #d8c3a2; /* Fundo claro */
             }
-        }
-        @media (max-width: 600px) {
+            h2, nav ul li a {
+                font-size: 20px;
+            }
             nav ul {
+                flex-direction: column;
+                align-items: center;
                 padding: 0;
-                flex-wrap: wrap; /* Permite que o menu quebre para a linha de baixo se necessário */
             }
             nav ul li {
-                margin: 5px 5px; /* Reduz o espaçamento lateral entre os itens */
+                margin: 5px 0;
             }
-            nav ul li a {
-                padding: 10px; /* Reduz o padding para caber melhor na tela menor */
-                font-size: 20px; /* Reduz o tamanho da fonte para melhorar o ajuste */
+            .manual-section {
+                font-size: 14px; /* Reduz o tamanho da fonte em telas pequenas */
             }
         }
+
+        /* Ajustes para telas médias */
+        @media (max-width: 768px) {
+            body {
+                background-size: 250px 150px; /* Ajusta o tamanho da imagem */
+            }
+        }
+
+        /* Ajustes para telas grandes */
+        @media (max-width: 1024px) {
+            .header {
+                height: 60px; /* Ajusta a altura do cabeçalho para telas grandes */
+            }
+        }
+
+        /* Ajustes para smartphones pequenos */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px; /* Ajuste o texto para caber na tela */
+            }
+            .menu {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
         h1{
             background-color: #4c934a;
             font-size: 50px;
@@ -164,11 +177,8 @@
             text-decoration: none;
         }
         .menu{
-<<<<<<< HEAD
             text-align: center;
-=======
             text-align: right;
->>>>>>> 7144bfb417ae7282639bd300e986ad3bcdd94702
         }
         .menu li{
                 list-style-position: inside;
