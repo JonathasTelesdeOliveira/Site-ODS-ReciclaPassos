@@ -50,7 +50,7 @@
         /* Ajustes para telas médias */
         @media (max-width: 768px) {
             body {
-                background-size: 250px 150px; /* Ajusta o tamanho da imagem */
+                background-size: cover; /* Ajusta o tamanho da imagem */
             }
         }
 
@@ -64,60 +64,108 @@
         /* Ajustes para smartphones pequenos */
         @media (max-width: 480px) {
             body {
+                background-image: none;
+                background-color: #d8c3a2; /* Fundo claro */
                 font-size: 14px; /* Ajuste o texto para caber na tela */
             }
             .menu {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
             }
             /*-------------------------------------------------------------------*/
-            /* Para que os botões fiquem um debaixo do outro em telas pequenas */
-        section {
-            margin: 20px 0; /* Espaço entre as seções */
-            padding: 10px;
-            text-align: center; /* Centraliza o conteúdo de cada seção */
+            /* Para que os botões fiquem um debaixo do outro em telas pequenas */                           
+
+            #home, #about, #contact {
+                width: 100%; /* Ocupa a largura inteira disponível */
+                background-color: #f0f0f0; /* cor de fundo para a seção Início */
+            }
+            /* Responsividade: se a tela for menor que 768px, as seções ficam empilhadas */
+            @media (max-width: 768px) {
+                section {
+                    display: block; /* Garante que cada seção ocupe 100% da largura e fique embaixo */
+                }
+            }
+
+            /* Para telas maiores, as seções ficam lado a lado */
+            @media (min-width: 769px) {
+                section {
+                    display: inline-block; /* Para telas maiores, seções podem ficar lado a lado */
+                    width: 32%; /* Cada seção ocupa aproximadamente 1/3 da largura */
+                    vertical-align: top; /* Garante o alinhamento em cima */
+                }
+            }
+        }
+        /*----------------------------------------------------------------------*/
+        /* Ajustar o footer*/
+        @media (max-width: 480px) {
+            section, footer {
+                background-color: #d3ba92; /* Cor de fundo que você preferir */
+            }
+
+            footer {
+                color: #fff; /* Ajusta a cor do texto */
+                text-align: center;
+            }
+
+            section {
+                padding: 20px; /* Ajusta o padding para seções em telas menores */
+            }
+
+            /* Ajusta o tamanho da fonte para seções em dispositivos pequenos */
+            section h2 {
+                font-size: 18px;
+            }
         }
 
-        #home, #about, #contact {
-            width: 100%; /* Ocupa a largura inteira disponível */
         }
-
-        #home {
-            background-color: #f0f0f0; /* cor de fundo para a seção Início */
-        }
-
-        #about {
-            background-color: #e1e1e1; /* cor de fundo para a seção Sobre */
-        }
-
-        #contact {
-            background-color: #d2d2d2; /* cor de fundo para a seção Contato */
-        }
-
-        /* Responsividade: se a tela for menor que 768px, as seções ficam empilhadas */
+        /* Responsividade: ajusta o logo em telas menores (smartphones) */
         @media (max-width: 768px) {
-            section {
-                display: block; /* Garante que cada seção ocupe 100% da largura e fique embaixo */
+            .logo {
+                height: 100px;  /* Ajusta a altura para telas menores */
+                width: auto;    /* Mantém a largura proporcional */
+                float: none;    /* Remove o float para evitar quebra de layout */
+                display: block; /* Faz o logo se comportar como um bloco */
+                margin: 0 auto; /* Centraliza o logo horizontalmente */
+            }
+        }
+        @media (max-width: 480px) {
+                p {
+                    font-size: 12px; /* Ajuste o texto para telas pequenas */
+            }
+        }
+        /* flexbox*/
+        /*----------------------------------------------------------------*/
+        /* Geral: seções lado a lado */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* Quebra linha caso não caiba na largura */
+            justify-content: center; /* Centraliza horizontalmente */
+            gap: 10px; /* Espaço entre as imagens */
+        }
+
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .image-container {
+                flex-direction: row; /* Mantém lado a lado */
+                justify-content: center; /* Centraliza */
+            }
+
+            .image-container img {
+                width: 100px; /* Ajuste do tamanho em telas pequenas */
+                height: auto;
             }
         }
 
-        /* Para telas maiores, as seções ficam lado a lado */
-        @media (min-width: 769px) {
-            section {
-                display: inline-block; /* Para telas maiores, seções podem ficar lado a lado */
-                width: 32%; /* Cada seção ocupa aproximadamente 1/3 da largura */
-                vertical-align: top; /* Garante o alinhamento em cima */
-            }
-        }
-
-        }
-        
         h1{
-            background-color: #4c934a;
+            background-color: #dd00e8;
             font-size: 50px;
             margin: 0;
             height: 50px;
             padding: 10px;
+            width:auto;
            
         }
         h2{
@@ -161,17 +209,24 @@
             background-color: white;
             height: 20px;
             margin: 0px 0px 0px 10px;
+            width: auto;
         }
         .subtitleVerde{
             background-color: #0dff0d;
             height: 45px;
             margin: 0;
             margin-bottom: 0;
+            width: auto;
         }
-        .logo{
-            height: 130px;
-            float: left;
+        /* Estilo para o logo em telas maiores */
+        .logo {
+            height: 130px;  /* Define a altura fixa para telas grandes */
+            width: auto;    /* A largura será ajustada automaticamente */
+            float: left;    /* Deixa o logo alinhado à esquerda */
         }
+
+        
+
         .reciclaveis{
             float: left;
         }
@@ -188,14 +243,20 @@
         .espaco{
             margin-top: 100px;
         }
+        section {
+            margin: left; /* Espaço entre as seções */
+            padding: 10px;
+        }
         footer {
-             background-color:#B69A6D;
-             color: white;
-             text-align: center;
-             padding: 1rem;
-             margin-top: auto;
-             height: auto;
-             width: auto;
+            color: #ffff;
+            background-color:#B69A6D;
+            text-align: center;
+            padding: 1 rem;
+            width: 100%;
+            padding: 1rem;
+            width: 100%;
+            position: relative;
+            bottom: 0;
         }
         nav ul {
             display: flex;
@@ -205,7 +266,11 @@
             margin-top: 0;
             padding: 10px;
         }
-
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
         nav ul li {
             margin: 0 10px;
         }
@@ -218,10 +283,6 @@
         a{
             text-decoration: none;
         }
-        .menu{
-            text-align: center;
-            text-align: center;
-        }
         .menu li{
                 list-style-position: inside;
                 list-style-type: none;
@@ -233,6 +294,7 @@
                 padding: 16px;
                 display: inline-block;
                 font-style: normal;
+                text-align: center;
 
         }
         .margintop{
@@ -241,12 +303,6 @@
         }
         .margem{
             justify-content: center;
-        }
-        .margemC{
-            text-align: center;
-        }
-        .margemzero{
-            margin: 0;
         }
         .image-container {
             display: flex;
@@ -269,6 +325,13 @@
         }
         .social-links a:hover {
             background-color: #4c934a; /* cor ao passar o mouse */
+        }
+        .OsubTi{
+            text-align: left;
+            margin-left: 0;
+        }
+        .manual-section ol {
+            padding-left: 0; /* Remove o espaçamento padrão à esquerda das listas */
         }
 </style>
 </head>
@@ -395,4 +458,4 @@
     
 </body>
 </html>
-=======
+
