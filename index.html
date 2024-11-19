@@ -42,6 +42,8 @@
             }
             .manual-section {
                 font-size: 14px; /* Reduz o tamanho da fonte em telas pequenas */
+                text-align: left;
+                margin: 0;
             }
         }
 
@@ -68,6 +70,46 @@
                 display: flex;
                 flex-direction: column;
             }
+            /*-------------------------------------------------------------------*/
+            /* Para que os botões fiquem um debaixo do outro em telas pequenas */
+        section {
+            margin: 20px 0; /* Espaço entre as seções */
+            padding: 10px;
+            text-align: center; /* Centraliza o conteúdo de cada seção */
+        }
+
+        #home, #about, #contact {
+            width: 100%; /* Ocupa a largura inteira disponível */
+        }
+
+        #home {
+            background-color: #f0f0f0; /* cor de fundo para a seção Início */
+        }
+
+        #about {
+            background-color: #e1e1e1; /* cor de fundo para a seção Sobre */
+        }
+
+        #contact {
+            background-color: #d2d2d2; /* cor de fundo para a seção Contato */
+        }
+
+        /* Responsividade: se a tela for menor que 768px, as seções ficam empilhadas */
+        @media (max-width: 768px) {
+            section {
+                display: block; /* Garante que cada seção ocupe 100% da largura e fique embaixo */
+            }
+        }
+
+        /* Para telas maiores, as seções ficam lado a lado */
+        @media (min-width: 769px) {
+            section {
+                display: inline-block; /* Para telas maiores, seções podem ficar lado a lado */
+                width: 32%; /* Cada seção ocupa aproximadamente 1/3 da largura */
+                vertical-align: top; /* Garante o alinhamento em cima */
+            }
+        }
+
         }
         
         h1{
@@ -178,7 +220,7 @@
         }
         .menu{
             text-align: center;
-            text-align: right;
+            text-align: center;
         }
         .menu li{
                 list-style-position: inside;
