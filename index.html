@@ -119,8 +119,6 @@
                 font-size: 18px;
             }
         }
-
-        }
         /* Responsividade: ajusta o logo em telas menores (smartphones) */
         @media (max-width: 768px) {
             .logo {
@@ -129,12 +127,12 @@
                 float: none;    /* Remove o float para evitar quebra de layout */
                 display: block; /* Faz o logo se comportar como um bloco */
                 margin: 0 auto; /* Centraliza o logo horizontalmente */
+                }
             }
-        }
         @media (max-width: 480px) {
-                p {
-                    font-size: 12px; /* Ajuste o texto para telas pequenas */
-            }
+        p {
+            font-size: 12px; /* Ajuste o texto para telas pequenas */
+        }
         }
         /* flexbox*/
         /*----------------------------------------------------------------*/
@@ -223,6 +221,21 @@
             height: 130px;  /* Define a altura fixa para telas grandes */
             width: auto;    /* A largura será ajustada automaticamente */
             float: left;    /* Deixa o logo alinhado à esquerda */
+            transition: height 0.3s ease; /* Suaviza a transição ao mudar de tamanho */
+        }
+
+        /* Para telas médias (tablets) */
+        @media (max-width: 768px) {
+            .logo {
+                height: 100px; /* Reduz o tamanho do logo */
+            }
+        }
+
+        /* Para telas pequenas (smartphones) */
+        @media (max-width: 480px) {
+            .logo {
+                height: 70px; /* Reduz ainda mais o logo */
+            }
         }
 
         
@@ -452,10 +465,7 @@
             <li class="butaoli"><a href="https://www.instagram.com/"target="_blank">INSTAGRAM</a></li>
             <li class="butaoli"><a href="https://www.linkedin.com/pt-BR">LINKEDIN</a></li>
         </ul>
-    </footer>
-
-
-    
+    </footer>    
 </body>
 </html>
 
