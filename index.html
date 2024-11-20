@@ -22,7 +22,20 @@
             background-repeat: no-repeat;
             background-position: right 10px top 200px;
         }
-        @media (max-width: 600px) {
+        /* Para telas médias (tablets) */
+        @media (max-width: 768px) {
+            .logo {
+                height: 100px; /* Reduz o tamanho do logo */
+            }
+        }
+
+        /* Para telas pequenas (smartphones) */
+        @media (max-width: 480px) {
+            .logo {
+                height: 70px; /* Reduz ainda mais o logo */
+            }
+        }
+        @media (max-width: 800px) {
             body {
                 background-size: 200px 150px; /* Ajusta o tamanho da imagem para telas menores */
                 font-size: 14px; /* Ajusta o tamanho da fonte */
@@ -223,23 +236,6 @@
             float: left;    /* Deixa o logo alinhado à esquerda */
             transition: height 0.3s ease; /* Suaviza a transição ao mudar de tamanho */
         }
-
-        /* Para telas médias (tablets) */
-        @media (max-width: 768px) {
-            .logo {
-                height: 100px; /* Reduz o tamanho do logo */
-            }
-        }
-
-        /* Para telas pequenas (smartphones) */
-        @media (max-width: 480px) {
-            .logo {
-                height: 70px; /* Reduz ainda mais o logo */
-            }
-        }
-
-        
-
         .reciclaveis{
             float: left;
         }
