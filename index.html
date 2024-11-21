@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="Autor" content="Jonathas Teles de Oliivera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Recicla Passos - Plataforma para facilitar a coleta seletiva e fornecer informações sobre os pontos de coleta na cidade de Passos.">
     <meta name="keywords" content="reciclagem, coleta seletiva, ecoponto, Passos, meio ambiente">
@@ -11,6 +12,7 @@
     <meta property="og:image" content="imagens/logo-para-social.jpg"> <!-- Imagem que será exibida ao compartilhar -->
     <meta property="og:url" content="https://www.seusite.com">
     <meta name="twitter:card" content="summary_large_image">
+
     <title>RECICLA PASSOS</title>
     <style>
         body {
@@ -21,19 +23,6 @@
             background-size: 500px 380px;
             background-repeat: no-repeat;
             background-position: right 10px top 200px;
-        }
-        /* Para telas médias (tablets) */
-        @media (max-width: 768px) {
-            .logo {
-                height: 100px; /* Reduz o tamanho do logo */
-            }
-        }
-
-        /* Para telas pequenas (smartphones) */
-        @media (max-width: 480px) {
-            .logo {
-                height: 70px; /* Reduz ainda mais o logo */
-            }
         }
         @media (max-width: 800px) {
             body {
@@ -59,6 +48,17 @@
                 margin: 0;
             }
         }
+        @media (max-width: 520px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+
 
         /* Ajustes para telas médias */
         @media (max-width: 768px) {
@@ -74,12 +74,123 @@
             }
         }
 
-        /* Ajustes para smartphones pequenos */
-        @media (max-width: 480px) {
+        
+        /*----------------------------------------------------------------------*/
+        /* Estilo para o logo em telas maiores */
+        .logo {
+            background-image: cover;
+            height: 130px;  /* Define a altura fixa para telas grandes */
+            float: left;    /* Deixa o logo alinhado à esquerda */
+            transition: height 0.3s ease; /* Suaviza a transição ao mudar de tamanho */
+        }
+        /* Para telas médias (tablets) */
+        @media (max-width: 768px) {
+            .logo {
+                background-image: cover;
+                height: 100px; /* Reduz o tamanho do logo */
+                float: left;    /* Remove o float para evitar quebra de layout */
+            }
+        }    
+        /* flexbox*/
+        /*----------------------------------------------------------------*/
+        /* Geral: seções lado a lado */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* Quebra linha caso não caiba na largura */
+            justify-content: center; /* Centraliza horizontalmente */
+            gap: 10px; /* Espaço entre as imagens */
+        }
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .image-container {
+                flex-direction: row; /* Mantém lado a lado */
+                justify-content: center; /* Centraliza */
+            }
+            .image-container img {
+                width: 100px; /* Ajuste do tamanho em telas pequenas */
+                height: auto;
+            }
+        }
+        @media (max-width: 500px) {
             body {
-                background-image: none;
-                background-color: #d8c3a2; /* Fundo claro */
-                font-size: 14px; /* Ajuste o texto para caber na tela */
+                font-size: 14px; /* Reduz tamanho do texto */
+                background-size: cover; /* Ajusta a imagem de fundo */
+
+            }
+        
+            h1, h2, h3 {
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 5px 0;
+            }
+            p, li {
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 5px 0;
+            }button {
+                width: 100%; /* Botões ocupam toda a largura */
+                padding: 10px;
+            }
+            .container {
+                margin: 0 auto; /* Centraliza */
+                padding: 10px;  /* Ajusta espaçamento */
+            }
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden; /* Remove a barra de rolagem horizontal */
+                font-size: 14px;
+                background-size: cover;
+            }
+
+            section, nav, header, footer {
+                width: 100%;
+                padding: 10px; /* Adicione um espaçamento interno */
+                box-sizing: border-box; /* Garante que padding não aumente a largura total */
+            }
+            footer {
+                height: 100px; /* Altura fixa do footer */
+                background-color:#B69A6D;
+                color: #fff;
+                text-align: center;
+            }
+            .content {
+                padding: 10px;
+                margin: 0;
+                width: 100%;
+            }
+            .logo, img {
+                max-width: 100%; /* Ajusta o tamanho ao limite da tela */
+                margin-top: 50px;
+                height: 50px; /* Reduz o tamanho do logo */
+                float: left;    /* Remove o float para evitar quebra de layout */
+            }
+            .logo {
+                height: 80px; /* Reduz tamanho */
+                margin: 0 auto;
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            nav ul li a {
+                display: block; /* Links ocupam 100% */
+                padding: 10px;
+            }
+            /* Ajusta o tamanho da fonte para seções em dispositivos pequenos */
+            section {
+                padding: 20px; /* Ajusta o padding para seções em telas menores */
+            }
+
+            /* Ajusta o tamanho da fonte para seções em dispositivos pequenos */
+            section h2 {
+                font-size: 18px;
             }
             .menu {
                 display: flex;
@@ -93,7 +204,7 @@
 
             #home, #about, #contact {
                 width: 100%; /* Ocupa a largura inteira disponível */
-                background-color: #f0f0f0; /* cor de fundo para a seção Início */
+                
             }
             /* Responsividade: se a tela for menor que 768px, as seções ficam empilhadas */
             @media (max-width: 768px) {
@@ -111,65 +222,11 @@
                 }
             }
         }
-        /*----------------------------------------------------------------------*/
-        /* Ajustar o footer*/
-        @media (max-width: 480px) {
-            section, footer {
-                background-color: #d3ba92; /* Cor de fundo que você preferir */
-            }
 
-            footer {
-                color: #fff; /* Ajusta a cor do texto */
-                text-align: center;
-            }
+        /*_____________________________ver o que é bom________________________________________*/
 
-            section {
-                padding: 20px; /* Ajusta o padding para seções em telas menores */
-            }
-
-            /* Ajusta o tamanho da fonte para seções em dispositivos pequenos */
-            section h2 {
-                font-size: 18px;
-            }
-        }
-        /* Responsividade: ajusta o logo em telas menores (smartphones) */
-        @media (max-width: 768px) {
-            .logo {
-                height: 100px;  /* Ajusta a altura para telas menores */
-                width: auto;    /* Mantém a largura proporcional */
-                float: none;    /* Remove o float para evitar quebra de layout */
-                display: block; /* Faz o logo se comportar como um bloco */
-                margin: 0 auto; /* Centraliza o logo horizontalmente */
-                }
-            }
-        @media (max-width: 480px) {
-        p {
-            font-size: 12px; /* Ajuste o texto para telas pequenas */
-        }
-        }
-        /* flexbox*/
-        /*----------------------------------------------------------------*/
-        /* Geral: seções lado a lado */
-        .image-container {
-            display: flex;
-            flex-wrap: wrap; /* Quebra linha caso não caiba na largura */
-            justify-content: center; /* Centraliza horizontalmente */
-            gap: 10px; /* Espaço entre as imagens */
-        }
-
-        /* Responsividade para telas pequenas */
-        @media (max-width: 768px) {
-            .image-container {
-                flex-direction: row; /* Mantém lado a lado */
-                justify-content: center; /* Centraliza */
-            }
-
-            .image-container img {
-                width: 100px; /* Ajuste do tamanho em telas pequenas */
-                height: auto;
-            }
-        }
-
+           
+       
         h1{
             background-color: #dd00e8;
             font-size: 50px;
@@ -229,13 +286,6 @@
             margin-bottom: 0;
             width: auto;
         }
-        /* Estilo para o logo em telas maiores */
-        .logo {
-            height: 130px;  /* Define a altura fixa para telas grandes */
-            width: auto;    /* A largura será ajustada automaticamente */
-            float: left;    /* Deixa o logo alinhado à esquerda */
-            transition: height 0.3s ease; /* Suaviza a transição ao mudar de tamanho */
-        }
         .reciclaveis{
             float: left;
         }
@@ -256,11 +306,12 @@
             margin: left; /* Espaço entre as seções */
             padding: 10px;
         }
+
         footer {
             color: #ffff;
             background-color:#B69A6D;
             text-align: center;
-            padding: 1 rem;
+            padding: 1rem;
             width: 100%;
             padding: 1rem;
             width: 100%;
@@ -355,15 +406,22 @@
             <li><a href="#contact">Contato</a></li>
         </ul>
     </nav>
+    
     <section id="home">
         <h2>Bem-vindo ao Recicla Passos</h2>
-        <p class="branco">Ajudando a comunidade a fazer a coleta seletiva e indicando o ecoponto mais próximo. <br> Contribuindo para um ambiente mais limpo.</p>
+        <p>Ajudando a comunidade a fazer a coleta seletiva e indicando o ecoponto mais próximo. <br> Contribuindo para um ambiente mais limpo.</p>
     </section>
-
+    
     <section id="about">
         <h2>Sobre Nós</h2>
-        <p class="branco">Nosso objetivo é facilitar o acesso às informações sobre reciclagem e coleta seletiva na comunidade.</p>
+        <p>Nosso objetivo é facilitar o acesso às informações sobre reciclagem e coleta seletiva na comunidade.</p>
     </section>
+    
+    <section id="contact">
+        <h2>Contato</h2>
+        <p>Entre em contato para mais informações sobre pontos de coleta e reciclagem.</p>
+    </section>
+    
 
     <section id="collection-points">
 
@@ -452,9 +510,9 @@
     
     </section>
     <footer id="contact">
-        <h4 class="margemC">Contato</h4>
-        <p class="margemC">Fale conosco para mais informações sobre coleta seletiva e reciclagem.</p>
-        <p class="margemC">Email: contato@passosrecicla.com</p>
+        <h4>Contato</h4>
+            <p>Fale conosco para mais informações sobre coleta seletiva e reciclagem.</p>
+            <p>Email: contato@passosrecicla.com</p>
 
         <ul class="menu">
             <li class="butaoli"><a href="https://www.facebook.com/"target="_blank">FACEBOOK</a></li>
